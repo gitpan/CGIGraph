@@ -220,7 +220,7 @@ sub graphMap {
 			# note that there is an error in documentation
 			# arguments are in wrong order
                         $final.= "href=\"$name?select=$row[$index]&$mapInfo";
-                        $final.= " onMouseOver=\"area.value='$text'; ";
+                        $final.= " onMouseOver=\"myform.myarea.value='$text'; ";
 			$final.= "return true;\">\n";
 
                         $index++;

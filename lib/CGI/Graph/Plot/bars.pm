@@ -152,7 +152,7 @@ sub graphMap {
                         $final.= "href=\"$name?select=$bar_count&";
 			$final.= "select_type=unselect&";
 			$final.= $mapInfo;
-                        $final.= " onMouseOver=\"area.value='$text';";
+                        $final.= " onMouseOver=\"myform.myarea.value='$text';";
 			$final.= "return true;\">\n";
 
 			# map area for unselected portion of bar
@@ -163,7 +163,7 @@ sub graphMap {
                         $final.= "href=\"$name?select=$bar_count&";
 			$final.= "select_type=select&";
 			$final.= $mapInfo;
-                        $final.= " onMouseOver=\"area.value='$text';";
+                        $final.= " onMouseOver=\"myform.myarea.value='$text';";
 			$final.= "return true;\">\n";
 
                         $bar_count++;

@@ -43,9 +43,9 @@ Plot::all_values($page->{myFile},$page->{table}->nofRow(),1) if
 # get hash containing all parameters from CGI object
 %hash = $q->Vars;
 
-# create a new Plot object by calling newGraph function (from toolbox.pl)
+# create a new Plot object by calling new function
 # and passing in hash reference containing CGI parameters
-$plot = newGraph(\%hash);
+$plot = new CGI::Graph(\%hash);
  
 # obtain parameters for main image and global view
 $graphParams = $plot->graphParams();

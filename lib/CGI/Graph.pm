@@ -6,11 +6,11 @@ use CGI::Graph::Plot::points::string;
 use CGI::Graph::Plot::bars::numerical;
 use CGI::Graph::Plot::bars::string;
 
-$VERSION = "0.91";
+$VERSION = "0.92";
 my $directory = ".";
 
-sub newGraph {
-	my ($vars) = @_;		
+sub new {
+	my $vars = pop(@_);		
 
 	my $table = Data::Table::fromCSV($vars->{source});
 	my @header = $table->header;
@@ -26,12 +26,18 @@ sub newGraph {
 		return new CGI::Graph::Plot::bars::string($vars);
 	}
 
-	elsif ($vars->{graph_type} eq 'points') {
+	#elsif ($vars->{graph_type} eq 'points') {
+	else {
 	        if ($vars->{X} =~ /^[ir]_/) {
 			return new CGI::Graph::Plot::points::numerical($vars);
 		}
 		return new CGI::Graph::Plot::points::string($vars);
 	}
+}
+
+sub newGraph {
+	my ($vars) = @_;
+	return new($vars);
 }
 
 sub table {
@@ -153,7 +159,7 @@ a bar graph using a non-numerical X axis.
 
 Sample Driver.cgi:
 
-	use classname;			   # i.e. CGI::Graph::Plot::points::numerical
+	use CGI::Graph;
 	use CGI;
 
 	$q = new CGI;
@@ -161,7 +167,7 @@ Sample Driver.cgi:
 	$q->param('myFile','select.dat');
 	%hash = $q->Vars();		   # get hash from CGI object
 
-	$plot = new classname(\%hash);     # create new CGI::Graph object
+	$plot = new CGI::Graph(\%hash);     # create new CGI::Graph object
 
 	# specify dimensions for images and maps
 	$graph_x_size = 500;
@@ -189,14 +195,14 @@ Sample Driver.cgi:
 
 Sample Draw.cgi
 
-	use classname;				# i.e. CGI::Graph::Plot::points::numerical
+	use CGI::Graph;
 	use CGI;
 	use GD;
 
 	$q = new CGI;
 
 	%hash = $q->Vars;			# get hash from CGI object 
-	my $plot = new classname(\%hash);	# create new CGI::Graph object
+	my $plot = new CGI::Graph(\%hash);	# create new CGI::Graph object
 
 	if ($q->param('grid')) {
 	        $gd = $plot->drawGrid();	# create a gd object that represents the grid image
@@ -308,6 +314,11 @@ creates a new Plot. $vars is a hash reference that should contain the
 keys source and myFile. The source value is used as an input and should be a 
 CSV file. The myFile value is used to store selection values. Optional keys are
 the X and Y axes names, divisions, center, and zoom.
+
+=item I<CGI::Graph::Plot::classname> CGI::Graph::new($vars)
+
+creates a new Plot. Similar to the method above, but will automatically
+choose an appropriate graph type.
 
 =item I<void> Plot::all_values($filename,$size,$value)
 

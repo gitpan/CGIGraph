@@ -1,7 +1,7 @@
 MANIFEST
-Makefile
 Makefile.PL
 README
+CHANGES
 lib/CGI/Graph.pm
 lib/CGI/Graph/Layout.pm
 lib/CGI/Graph/Plot.pm

@@ -7,7 +7,7 @@ use CGI::Graph;
 $q = new CGI;
 
 %hash = $q->Vars;
-my $type = newGraph(\%hash);
+my $type = new CGI::Graph(\%hash);
 
 if ($q->param('grid')) {
 	$gd = $type->drawGrid();

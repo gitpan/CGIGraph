@@ -103,7 +103,7 @@ sub textbox {
 	my $self = shift;
 	my $cols = $self->{table}->nofCol;
 
-	my $final = $self->{CGI}->textarea(-name     => 'area',
+	my $final = $self->{CGI}->textarea(-name     => 'myarea',
 		                 -default  => '',
 		                 -rows     => $cols,
 	        	         -columns  => $default{columns});
