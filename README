@@ -5,6 +5,8 @@ graphing utility. CGI::Graph allows users to visualize spreadsheet data
 using scatter plots, bar plots, histograms, etc. It also provides features such 
 as element selection, zooming, panning and more. 
 
+Hompage: http://carrier.gnf.org/publications/CGIGraph
+
 REQUIREMENTS
 
 This module set requires you to have installed the following other perl modules:

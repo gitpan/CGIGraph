@@ -15,7 +15,7 @@
 #	DISTNAME => q[CGIGraph]
 #	NAME => q[CGI::Graph]
 #	PREREQ_PM => { Data::Table=>undef, CGI=>undef, GD::Graph=>undef, GD=>undef }
-#	VERSION_FROM => q[lib/CGI/Graph/Plot.pm]
+#	VERSION_FROM => q[lib/CGI/Graph.pm]
 #	dist => { COMPRESS=>q[gzip -9f], SUFFIX=>q[gz] }
 
 # --- MakeMaker post_initialize section:
@@ -51,9 +51,9 @@ AR_STATIC_ARGS = cr
 NAME = CGI::Graph
 DISTNAME = CGIGraph
 NAME_SYM = CGI_Graph
-VERSION = 0.9
-VERSION_SYM = 0_9
-XS_VERSION = 0.9
+VERSION = 0.91
+VERSION_SYM = 0_91
+XS_VERSION = 0.91
 INST_BIN = blib/bin
 INST_EXE = blib/script
 INST_LIB = blib/lib
@@ -98,7 +98,7 @@ FULLEXT = CGI/Graph
 BASEEXT = Graph
 PARENT_NAME = CGI
 DLBASE = $(BASEEXT)
-VERSION_FROM = lib/CGI/Graph/Plot.pm
+VERSION_FROM = lib/CGI/Graph.pm
 OBJECT = 
 LDFROM = $(OBJECT)
 LINKTYPE = dynamic
@@ -686,7 +686,7 @@ testdb_static :: testdb_dynamic
 # --- MakeMaker ppd section:
 # Creates a PPD (Perl Package Description) for a binary distribution.
 ppd:
-	@$(PERL) -e "print qq{<SOFTPKG NAME=\"CGIGraph\" VERSION=\"0,9,0,0\">\n}. qq{\t<TITLE>CGIGraph</TITLE>\n}. qq{\t<ABSTRACT>Create interactive CGI-based graphs</ABSTRACT>\n}. qq{\t<AUTHOR>Max Chang &lt;chang\@gnf.org&gt;</AUTHOR>\n}. qq{\t<IMPLEMENTATION>\n}. qq{\t\t<DEPENDENCY NAME=\"CGI\" VERSION=\"0,0,0,0\" />\n}. qq{\t\t<DEPENDENCY NAME=\"Data-Table\" VERSION=\"0,0,0,0\" />\n}. qq{\t\t<DEPENDENCY NAME=\"GD\" VERSION=\"0,0,0,0\" />\n}. qq{\t\t<DEPENDENCY NAME=\"GD-Graph\" VERSION=\"0,0,0,0\" />\n}. qq{\t\t<OS NAME=\"$(OSNAME)\" />\n}. qq{\t\t<ARCHITECTURE NAME=\"i686-linux\" />\n}. qq{\t\t<CODEBASE HREF=\"\" />\n}. qq{\t</IMPLEMENTATION>\n}. qq{</SOFTPKG>\n}" > CGIGraph.ppd
+	@$(PERL) -e "print qq{<SOFTPKG NAME=\"CGIGraph\" VERSION=\"0,91,0,0\">\n}. qq{\t<TITLE>CGIGraph</TITLE>\n}. qq{\t<ABSTRACT>Create interactive CGI-based graphs</ABSTRACT>\n}. qq{\t<AUTHOR>Max Chang &lt;chang\@gnf.org&gt;</AUTHOR>\n}. qq{\t<IMPLEMENTATION>\n}. qq{\t\t<DEPENDENCY NAME=\"CGI\" VERSION=\"0,0,0,0\" />\n}. qq{\t\t<DEPENDENCY NAME=\"Data-Table\" VERSION=\"0,0,0,0\" />\n}. qq{\t\t<DEPENDENCY NAME=\"GD\" VERSION=\"0,0,0,0\" />\n}. qq{\t\t<DEPENDENCY NAME=\"GD-Graph\" VERSION=\"0,0,0,0\" />\n}. qq{\t\t<OS NAME=\"$(OSNAME)\" />\n}. qq{\t\t<ARCHITECTURE NAME=\"i686-linux\" />\n}. qq{\t\t<CODEBASE HREF=\"\" />\n}. qq{\t</IMPLEMENTATION>\n}. qq{</SOFTPKG>\n}" > CGIGraph.ppd
 
 # --- MakeMaker pm_to_blib section:
 

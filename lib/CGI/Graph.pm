@@ -6,6 +6,7 @@ use CGI::Graph::Plot::points::string;
 use CGI::Graph::Plot::bars::numerical;
 use CGI::Graph::Plot::bars::string;
 
+$VERSION = "0.91";
 my $directory = ".";
 
 sub newGraph {
@@ -54,7 +55,7 @@ sub table {
 
 =head1 NAME
 
-CGI::Graph - CGI Graphing Module
+CGI::Graph - Create interactive CGI-based graphs
 
 =head1 DESCRIPTION
 

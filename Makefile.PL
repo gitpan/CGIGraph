@@ -4,7 +4,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
 	'NAME' 			=> 'CGI::Graph',
 	'DISTNAME'		=> 'CGIGraph',
-	'VERSION_FROM'		=> 'lib/CGI/Graph/Plot.pm',
+	'VERSION_FROM'		=> 'lib/CGI/Graph.pm',
 
         ($] >= 5.005 ?
 		('ABSTRACT' => 'Create interactive CGI-based graphs',

@@ -10,7 +10,6 @@ use CGI;
 use GD;
 use GD::Graph;
 
-$VERSION = "0.9";
 my $directory = ".";
 
 my %default = ( divisions  	=> 17,
