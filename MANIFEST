@@ -1,7 +1,7 @@
+CHANGES
 MANIFEST
 Makefile.PL
 README
-CHANGES
 lib/CGI/Graph.pm
 lib/CGI/Graph/Layout.pm
 lib/CGI/Graph/Plot.pm
@@ -19,3 +19,4 @@ supplement/save.gif
 supplement/scatterplot.gif
 supplement/selectTable.cgi
 supplement/selection.dat
+t/use.t

@@ -6,7 +6,7 @@ use CGI::Graph::Plot::points::string;
 use CGI::Graph::Plot::bars::numerical;
 use CGI::Graph::Plot::bars::string;
 
-$VERSION = "0.92";
+$VERSION = "0.93";
 my $directory = ".";
 
 sub new {

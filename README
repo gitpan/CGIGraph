@@ -9,7 +9,7 @@ Hompage: http://carrier.gnf.org/publications/CGIGraph
 
 REQUIREMENTS
 
-This module set requires you to have installed the following other perl modules:
+This module set requires you to have installed the following perl modules:
 
         Module
         ----------------
@@ -29,8 +29,9 @@ Installation is as per the standard module installation approach:
 NOTES
 
 A few example cgi scripts can be found in the "supplement" directory, as well as
-gifs for the icons in these scripts. The will cgi's require slight changes 
-before they can be used on your system.
+gifs for the icons in these scripts. The cgi's may require slight changes 
+before they can be used on your system. Also make sure that the file permissions
+are set correctly.
 
 
 TO DO

@@ -9,7 +9,7 @@ $q = new CGI;
 print $q->header;
 print $q->start_html(-title => "Selected Data");
 
-$displayTable = &table($q->param('source'),$q->param('myFile'),$q->param('X'));
+$displayTable = CGI::Graph::table($q->param('source'),$q->param('myFile'),$q->param('X'));
 print $displayTable->html;
 
 print $q->end_html;

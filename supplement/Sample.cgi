@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
 use CGI;
+use CGI::Carp qw(fatalsToBrowser);
 use Data::Table;
 use CGI::Graph;
 use CGI::Graph::Layout;
@@ -13,7 +14,7 @@ $q = new CGI;
 
 # explicitly set source, myFile, and graph_type parameters
 $q->param('source','example.dat');
-$q->param('myFile','selection.csv');
+$q->param('myFile','selection.dat');
 $q->param('graph_type','points') unless ($q->param('graph_type'));
 
 # if save icon has been clicked on, then return selection table in csv format
@@ -21,7 +22,7 @@ $q->param('graph_type','points') unless ($q->param('graph_type'));
 if ($q->param('save') || $q->param('save.x')) {
 	print "Content-type: application/octet-stream\n";
 	print "Content-disposition: filename=project.csv\n\n";
-        $displayTable = &table($q->param('source'),$q->param('myFile'),
+        $displayTable = CGI::Graph::table($q->param('source'),$q->param('myFile'),
                 $q->param('X'));
         print $displayTable->csv;
         exit;
@@ -32,12 +33,12 @@ print $q->start_html(-title=>'CGI::Graph Sample');
 print $q->startform("post", "Sample.cgi", "", "name='myform'");
 
 # create a new Layout object using the CGI object
-$page = new Layout($q);
+$page = new CGI::Graph::Layout($q);
 
 # update selection values if necessary
-Plot::all_values($page->{myFile},$page->{table}->nofRow(),0) if
+CGI::Graph::Plot::all_values($page->{myFile},$page->{table}->nofRow(),0) if
 ($q->param(unselect_list) eq 'All' ); # all unselected - set values to 0
-Plot::all_values($page->{myFile},$page->{table}->nofRow(),1) if
+CGI::Graph::Plot::all_values($page->{myFile},$page->{table}->nofRow(),1) if
 ($q->param(select_list) eq 'All');    # all selected - set values to 1
 
 # get hash containing all parameters from CGI object
@@ -127,7 +128,7 @@ print "</TABLE>\n";
 
 # if the refresh_display box is checked, re-open selection window
 if ($q->param('refresh_display')) {
-        print Layout::select_window($plot);
+        print CGI::Graph::Layout::select_window($plot);
 }
 
 # output image maps for main image and global view

@@ -1,3 +1,7 @@
+v.93
+fixed various bugs (thanks to Joseph P.)
+added a simple test script (try 'make test')
+
 v.92
 
 added 'new' function in CGI::Graph.pm. You can use it like this:

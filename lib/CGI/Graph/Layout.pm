@@ -137,7 +137,7 @@ sub icons {
 	else {
 		$final .= $self->{CGI}->submit(-name=>'bar',
 			        -value=>'Bar Graph',
-	                        -onClick => "graph_type.value='bars'");
+	                        -onClick => "graph_type.value='bar'");
 	}
 
 	$final.= ' ';
