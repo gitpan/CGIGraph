@@ -1,0 +1,45 @@
+		CGI::Graph
+
+CGI::Graph is a group of Perl modules which serve as a general purpose web-based
+graphing utility. CGI::Graph allows users to visualize spreadsheet data 
+using scatter plots, bar plots, histograms, etc. It also provides features such 
+as element selection, zooming, panning and more. 
+
+REQUIREMENTS
+
+This module set requires you to have installed the following other perl modules:
+
+        Module
+        ----------------
+	GD
+	GD::Graph
+	Data::Table
+
+
+INSTALLATION
+
+Installation is as per the standard module installation approach:
+
+        perl Makefile.PL
+        make
+        make install
+
+NOTES
+
+A few example cgi scripts can be found in the "supplement" directory, as well as
+gifs for the icons in these scripts. The will cgi's require slight changes 
+before they can be used on your system.
+
+
+TO DO
+
+- alllow data to be read from sources other than local CSV files
+- add option to display only selected elements
+
+
+Bug reports and suggestions for future changes would be very welcome. Please
+e-mail Max Chang <chang@gnf.org> 
+
+Copyright (c) 2001 Genomics Institute of the Novartis Research Foundation. All 
+rights reserved. This program is free software; you can redistribute it and/or 
+modify it under the same terms as Perl itself. 
